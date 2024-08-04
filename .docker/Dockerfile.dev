@@ -1,0 +1,18 @@
+FROM mcr.microsoft.com/vscode/devcontainers/base:bullseye
+
+ARG NODE_MAJOR_VERSION=22
+
+RUN apt-get update && apt install -y build-essential curl git
+
+RUN ln -sf /usr/share/zoneinfo/Japan /etc/localtime
+
+RUN mkdir -p /etc/apt/keyrings/ && \
+    curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && \
+    bash nodesource_setup.sh && \
+    apt update && apt-get install -y nodejs
+
+ARG USERNAME=vscode
+ARG HOME=/home/${USERNAME}
+
+USER ${USERNAME}
+WORKDIR ${HOME}/workspace

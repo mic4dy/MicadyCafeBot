@@ -1,0 +1,19 @@
+version: "3.8"
+
+volumes:
+  workspace-data:
+
+services:
+  server:
+    user: vscode
+    build:
+      context: .docker
+      dockerfile: Dockerfile.dev
+    env_file:
+      - .env
+    tty: true
+    volumes:
+      - .:/home/vscode/hostdir
+      - workspace-data:/home/vscode/workspace
+    ports:
+      - "127.0.0.1:8080:8080"

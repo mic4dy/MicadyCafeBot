@@ -1,0 +1,19 @@
+{
+  "name": "MicadyCafeBot",
+  "dockerComposeFile": "../docker-compose.dev.yml",
+  "service": "server",
+  "workspaceFolder": "/home/vscode/workspace",
+  "remoteUser": "root",
+  "containerEnv": {
+    "TZ": "Asia/Tokyo"
+  },
+  "postCreateCommand": "../hostdir/bin/post_create_command.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  }
+}

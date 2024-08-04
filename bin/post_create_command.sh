@@ -3,6 +3,7 @@
 set -e -x
 
 if ! [ -d .git ]; then
+    git config --global --add safe.directory /home/vscode/workspace
     rsync -rlpt ../hostdir/.git/ .git/
     git checkout -- .
 fi

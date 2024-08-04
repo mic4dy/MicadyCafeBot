@@ -1,0 +1,23 @@
+{
+  "name": "micady-cafe-bot",
+  "version": "1.0.0",
+  "description": "Discord BOT for micadys cafe",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "ts-node src/index.ts",
+    "start": "node build/index.js",
+    "compile": "tsc -p ."
+  },
+  "author": "micady",
+  "dependencies": {
+    "discord.js": "^14.15.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "globals": "^15.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0"
+  }
+}

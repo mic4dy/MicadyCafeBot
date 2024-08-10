@@ -1,18 +1,22 @@
-import { Client, Events, GatewayIntentBits } from 'discord.js'
-import dotenv from 'dotenv'
+import { Events } from "discord.js";
+import dotenv from "dotenv";
+import { CommandsClient } from "./config/commands_client";
+import { handleCommands } from "./util/command_handler";
 
-dotenv.config()
+dotenv.config();
 
-const client = new Client({
+const client = new CommandsClient({
   intents: [],
   partials: [],
-})
+});
 
 client.once(Events.ClientReady, () => {
-  console.log('Bot is ready')
+  console.log("Bot is ready");
   if (client.user) {
-    console.log(`Logged in as ${client.user.tag}`)
+    console.log(`Logged in as ${client.user.tag}`);
   }
-})
+});
 
-client.login(process.env.DISCORD_TOKEN)
+client.commands = handleCommands();
+
+client.login(process.env.DISCORD_TOKEN);

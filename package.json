@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Discord BOT for micadys cafe",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "start": "npx tsx src/index.ts",
     "command_deploy": "npx tsx src/deploy_command.ts"
@@ -14,10 +15,15 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.4.1",
     "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
     "globals": "^15.9.0",
+    "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
+    "tsx": "^4.17.0",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.0"
+    "typescript-eslint": "^8.0.1"
   }
 }

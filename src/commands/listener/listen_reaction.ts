@@ -1,5 +1,5 @@
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
-import { CommandModule } from "../command_module";
+import { CommandModule } from "../command_module.ts";
 
 const command: CommandModule = {
   data: new SlashCommandBuilder()

@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import dotenv from "dotenv";
-import { CommandHandler } from "./commands/command_handler";
-import { EventHandler } from "./events/event_handler";
+import { CommandHandler } from "./commands/command_handler.ts";
+import { EventHandler } from "./events/event_handler.ts";
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ const client = new Client({
 });
 
 const commandHandler = new CommandHandler();
-client.commands = await commandHandler.generateCollection();
+client.commands = await commandHandler.generateCommands();
 
 const eventHandler = new EventHandler();
 eventHandler.registerEvents(client);

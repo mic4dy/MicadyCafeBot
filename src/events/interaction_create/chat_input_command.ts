@@ -1,5 +1,5 @@
 import { CacheType, Events, Interaction } from "discord.js";
-import { EventModule } from "../event_module";
+import { EventModule } from "../event_module.ts";
 
 const event: EventModule = {
   name: Events.InteractionCreate,

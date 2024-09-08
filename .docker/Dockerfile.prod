@@ -1,11 +1,11 @@
 # Install dependencies
-FROM node:22-bullseye-slim as base
+FROM node:22-bullseye AS base
 WORKDIR /app
-COPY package*.json ./
+COPY package*.json /app
 RUN npm ci
 
 # Boot up the app
-FROM node:22-bullseye-slim
+FROM node:22-bullseye
 WORKDIR /app
 COPY . /app
 

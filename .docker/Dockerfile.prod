@@ -1,5 +1,8 @@
 # Boot up the app
 FROM node:22-bullseye
+
+RUN ln -sf /usr/share/zoneinfo/Japan /etc/localtime
+
 WORKDIR /app
 
 COPY package*.json ./
